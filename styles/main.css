@@ -1,0 +1,254 @@
+/* ---------- Base (mobile-first) ---------- */
+:root {
+  --primary: #0ea5e9;
+  --primary-dark: #0369a1;
+  --dark: #0f172a;
+  --light: #f1f5f9;
+  --accent: #f59e0b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+section { padding: 60px 20px; }
+h2 { text-align: center; font-size: 2rem; margin-bottom: 30px; }
+
+/* ---------- Navbar ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo { color: #fff; font-size: 1.5rem; font-weight: 700; }
+
+.menu-toggle {
+  display: block;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+nav ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  gap: 14px;
+  padding-top: 14px;
+}
+
+nav ul.active { display: flex; }
+nav ul a { color: #fff; transition: color 0.3s; }
+nav ul a:hover { color: var(--primary); }
+
+.btn-book, .btn-cta, #booking-form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-book:hover, .btn-cta:hover, #booking-form button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
+              url("../images/hero.svg") center / cover no-repeat;
+  color: #fff;
+}
+
+.hero h1 { font-size: 2.2rem; margin-bottom: 12px; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); }
+.hero p { font-size: 1.2rem; margin-bottom: 24px; }
+.btn-cta { background: var(--accent); padding: 14px 32px; font-size: 1.1rem; }
+.btn-cta:hover { background: #d97706; }
+
+/* ---------- Services ---------- */
+.services { background: var(--light); }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img { width: 100%; height: 180px; object-fit: cover; }
+.service-card h3 { margin: 14px 0 6px; }
+.service-card p { padding: 0 16px 20px; color: #475569; }
+
+/* ---------- Pricing ---------- */
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.price-card {
+  position: relative;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.price-card:hover { transform: translateY(-6px); border-color: var(--primary); }
+.price-card.featured { border-color: var(--primary); background: #f0f9ff; }
+.price { font-size: 2.4rem; font-weight: 700; color: var(--primary-dark); margin: 8px 0 14px; }
+.price-card ul { list-style: none; color: #475569; }
+.price-card li { padding: 4px 0; }
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  max-width: 420px;
+  margin: 8vh auto;
+  padding: 30px 24px;
+  border-radius: 12px;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content h2 { margin-bottom: 18px; }
+.close-btn { position: absolute; top: 10px; right: 16px; font-size: 1.8rem; cursor: pointer; }
+.close-btn:hover { color: var(--primary); }
+
+#booking-form { display: flex; flex-direction: column; gap: 14px; }
+
+#booking-form input, #booking-form select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#booking-form input:focus, #booking-form select:focus {
+  outline: 2px solid var(--primary);
+  border-color: transparent;
+}
+
+.form-error { color: #dc2626; font-size: 0.9rem; min-height: 1.2em; }
+.form-success { color: #16a34a; font-weight: 600; text-align: center; margin-top: 10px; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--dark); color: #fff; padding: 40px 20px 20px; }
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-links { display: flex; gap: 20px; font-size: 1.8rem; }
+.social-links a { transition: color 0.3s, transform 0.3s; }
+.social-links a:hover { color: var(--primary); transform: scale(1.2); }
+.copyright { text-align: center; margin-top: 24px; font-size: 0.85rem; color: #94a3b8; }
+
+/* ---------- Desktop (min-width: 769px) ---------- */
+@media (min-width: 769px) {
+  .menu-toggle { display: none; }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-top: 0;
+    gap: 26px;
+  }
+
+  .hero h1 { font-size: 3.4rem; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-content { flex-direction: row; justify-content: space-between; text-align: left; }
+}
+
+@media (min-width: 1024px) {
+  .service-grid { grid-template-columns: repeat(4, 1fr); }
+}

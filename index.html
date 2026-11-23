@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SparkleWash - professional car washing service. Book a wash online in minutes.">
+  <title>SparkleWash | Professional Car Washing Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- A. Navbar -->
+  <header>
+    <nav>
+      <div class="logo">SparkleWash <span aria-hidden="true">🚗</span></div>
+      <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="btn-book">Book Now</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- B. Hero -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Professional Car Washing Service</h1>
+        <p>Get your car sparkling clean in under 30 minutes!</p>
+        <button class="btn-cta">Schedule a Wash</button>
+      </div>
+    </section>
+
+    <!-- C. Services -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <img src="images/basic-wash.svg" alt="Basic Wash">
+          <h3>Basic Wash</h3>
+          <p>Exterior wash + tire shine</p>
+        </div>
+        <div class="service-card">
+          <img src="images/premium-wash.svg" alt="Premium Wash">
+          <h3>Premium Wash</h3>
+          <p>Full exterior + interior cleaning</p>
+        </div>
+        <div class="service-card">
+          <img src="images/foam-wash.svg" alt="Foam Wash">
+          <h3>Foam Wash</h3>
+          <p>Thick foam shampoo for a deep, gentle clean</p>
+        </div>
+        <div class="service-card">
+          <img src="images/detailing.svg" alt="Full Detailing">
+          <h3>Full Detailing</h3>
+          <p>Polish, wax and complete interior detailing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+      <h2>Simple Pricing</h2>
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Basic</h3>
+          <p class="price">$15</p>
+          <ul>
+            <li>Exterior wash</li>
+            <li>Tire shine</li>
+            <li>~15 minutes</li>
+          </ul>
+        </div>
+        <div class="price-card featured">
+          <span class="badge">Most Popular</span>
+          <h3>Premium</h3>
+          <p class="price">$30</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>Interior cleaning</li>
+            <li>~30 minutes</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h3>Detailing</h3>
+          <p class="price">$60</p>
+          <ul>
+            <li>Polish + wax</li>
+            <li>Deep interior detailing</li>
+            <li>~90 minutes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- D. Booking Modal -->
+  <div class="modal" id="booking-modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+      <span class="close-btn" aria-label="Close">&times;</span>
+      <h2 id="modal-title">Book Your Wash</h2>
+      <form id="booking-form" novalidate>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <select id="service" required>
+          <option value="Basic Wash ($15)">Basic Wash ($15)</option>
+          <option value="Premium Wash ($30)">Premium Wash ($30)</option>
+          <option value="Foam Wash ($25)">Foam Wash ($25)</option>
+          <option value="Full Detailing ($60)">Full Detailing ($60)</option>
+        </select>
+        <input type="date" id="date" required>
+        <p class="form-error" id="form-error"></p>
+        <button type="submit">Confirm Booking</button>
+      </form>
+      <p class="form-success" id="form-success"></p>
+    </div>
+  </div>
+
+  <!-- E. Footer -->
+  <footer id="contact">
+    <div class="footer-content">
+      <div>
+        <p>📞 Call us: (123) 456-7890</p>
+        <p>📍 123 Car Wash St, Your City</p>
+        <p>🕘 Open daily: 8 AM - 8 PM</p>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 SparkleWash. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
